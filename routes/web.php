@@ -12,16 +12,22 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+// cara route biasa
+// Route::get('/', function () {
+//     return view('index');
+// });
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/about', function () {
+//     $nama = "Ilham Anugrah !!";
+//     return view('about', ['nama' => $nama]);
+// });
 
-Route::get('/about', function () {
-    $nama = "Ilham Anugrah !!";
-    return view('about', ['nama' => $nama]);
-});
+// Route::get('/mahasiswa', function () {
+//     return view('mahasiswa');
+// });
 
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa');
-});
+// cara route controller
+// url , namacontroller@namamethod
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/mahasiswa', 'MahasiswaController@index');
