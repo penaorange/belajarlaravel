@@ -30,4 +30,10 @@ use Illuminate\Support\Facades\Route;
 // url , namacontroller@namamethod
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-Route::get('/mahasiswa', 'MahasiswaController@index');
+
+Route::get('/students', 'StudentsController@index');
+Route::get('/students/create', 'StudentsController@create');
+
+Route::post('/students', 'StudentsController@store');
+// url yang ada parameter nya disimpen dibawah
+Route::get('/students/{student}', 'StudentsController@show');
